@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+# Background Color Changer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application that lets you change the page background color using buttons. Built with Vite, React, and TypeScript. This project demonstrates component composition, state management, and correct event handler forwarding.
 
-Currently, two official plugins are available:
+## Features
+- Buttons to set predefined background colors
+- Type-safe components with TypeScript
+- Fast development experience with Vite and hot module replacement
+- Minimal, clear component structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+Prerequisites:
+- Node.js version 18 or newer
+- One package manager: npm, pnpm, or yarn
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Installation:
+- Install dependencies using your preferred package manager
 
-- Configure the top-level `parserOptions` property like this:
+Development:
+- Start the development server and open the printed local URL in your browser
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Build:
+- Create a production build using the build script
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Preview:
+- Preview the production build locally using the preview script
+
+## Project Structure (high level)
+- Root folder containing configuration and scripts
+- Source folder with application code:
+  - Main application entry
+  - App component
+  - Reusable Button component
+  - Global styles
+
+## How It Works
+- The App component maintains the selected background color in state
+- Each Button triggers a click handler that updates the selected color
+- The selected color is applied to the page container or the document body
+
+## Common Pitfall
+If clicking a button doesn’t change the background, ensure your Button component forwards the click handler prop to the native button element. Without forwarding the handler, clicks won’t update the state.
+
+## Scripts
+- Development server
+- Production build
+- Local preview of the production build
+- Optional linting if configured
+
+## Tech Stack
+- React 18
+- TypeScript
+- Vite
+- ESLint (optional)
+
+## Contributing
+Issues and pull requests are welcome. Please ensure the project builds and passes lint checks before submitting changes.
+
+## License
+MIT
