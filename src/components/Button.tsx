@@ -4,10 +4,11 @@ import { Color } from "../constants/constant";
 type ButtonProps = {
   colorName: Color;
   className: string;
-  onClick?: React.ButtonHTMLAttributes<HTMLButtonElement>["onClick"];
+  onClick?: React.ButtonHTMLAttributes<HTMLButtonElement>['onClick'];
 };
 
-export const Button = ({ colorName, className, onClick }: ButtonProps) => {
+export const Button = (props: ButtonProps) => {
+  const { colorName, className, onClick } = props;
   return (
     <button
       className={`px-4 py-2 font-bold text-white uppercase rounded-full shadow-lg outline-none min-w-28 ${className}`}
